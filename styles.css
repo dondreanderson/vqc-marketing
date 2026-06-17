@@ -4,6 +4,41 @@
    VU-QC Header Variation 1
    Executive Glass
 ============================= */
+
+/* --- Neutralize old base CSS rules that conflict with V1 --- */
+.topbar-v1 .topbar-inner {
+  grid-template-columns: 156px 1fr auto;
+  gap: 28px;
+}
+.topbar-v1 .brand img { width: 148px; }
+.topbar-v1 .main-nav { display: flex; gap: 6px; }
+.topbar-v1 .main-nav a { color: rgba(226,232,240,0.78); font-size: 13.5px; }
+.topbar-v1 .main-nav a:hover { color: #fff; }
+.topbar-v1 .main-nav a.active,
+.topbar-v1 .main-nav a[aria-current="page"] { color: #fff; font-weight: 600; text-shadow: none; }
+.topbar-v1 .main-nav a.active::after,
+.topbar-v1 .main-nav a[aria-current="page"]::after { display: none; }
+.topbar-v1 .header-cta { display: flex; }
+.topbar-v1 .mobile-menu-btn { display: none; }
+.topbar-v1 .mobile-nav { display: none; }
+@media (max-width: 1200px) {
+  .topbar-v1 .topbar-inner { grid-template-columns: 148px 1fr auto; }
+  .topbar-v1 .main-nav { display: flex; }
+  .topbar-v1 .mobile-menu-btn { display: none; }
+}
+@media (max-width: 1080px) {
+  .topbar-v1 .main-nav { display: none; }
+  .topbar-v1 .mobile-menu-btn { display: inline-flex; }
+  .topbar-v1 .mobile-nav { display: none; }
+  .topbar-v1 .mobile-nav.open { display: grid; }
+}
+@media (max-width: 840px) {
+  .topbar-v1 .topbar-inner { grid-template-columns: 1fr auto; }
+  .topbar-v1 .header-cta { display: none; }
+  .topbar-v1 .mobile-menu-btn { display: inline-flex; }
+}
+/* --- End neutralization --- */
+
 .topbar-v1 {
   position: sticky;
   top: 0;
