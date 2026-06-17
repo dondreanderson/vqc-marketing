@@ -1,0 +1,13 @@
+VU-QC production bundle
+
+Included production upgrades:
+- minified HTML and CSS
+- optimized branding PNGs
+- favicon.ico, PNG favicons, Apple touch icon, Android icons
+- site.webmanifest and browserconfig.xml
+- sitemap.xml and robots.txt
+- enhanced active-page navigation polish with aria-current support
+
+Deployment note:
+- canonical URLs and sitemap use https://vu-qc.com
+- if production domain changes, update canonical, sitemap.xml, robots.txt, and manifest scope/start_url
