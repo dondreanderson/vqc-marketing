@@ -185,3 +185,23 @@
     grid-row: 1 !important;
   }
 }
+
+
+/* 8. Premium Sexy & Sleek Hero Headings text gradient */
+.hero-copy h1,
+.pricing-hero h1,
+.platform-copy h1,
+.modules-copy h1,
+.surety-copy h1,
+.agent-copy h1,
+.support-copy h1,
+.resources-copy h1,
+.use-cases-copy h1,
+.contact-copy h1 {
+  background: linear-gradient(135deg, #ffffff 40%, #a5b4fc 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  display: inline-block !important;
+  letter-spacing: -0.02em !important;
+  text-shadow: none !important;
+}
