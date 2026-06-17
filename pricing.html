@@ -40,24 +40,79 @@
 <div class="site-shell">
 
 <!-- ============ HEADER ============ -->
-<header class="topbar">
-<div class="container topbar-inner">
-<a class="brand" href="./index.html" aria-label="VU-QC home"><img src="./assets/vuqc-logo-light.png" alt="VU-QC logo" /></a>
-<div class="global-controls" aria-label="Global support controls">
-<div class="select-group"><button class="select-btn" data-toggle="langMenu">Language <span id="langValue">EN</span></button><div class="select-menu" id="langMenu"><button data-lang="EN">EN</button><button data-lang="ES">ES</button><button data-lang="FR">FR</button><button data-lang="PT">PT</button><button data-lang="AR">AR</button></div></div>
-<div class="select-group"><button class="select-btn" data-toggle="currencyMenu">Currency <span id="currencyValue">USD</span></button><div class="select-menu" id="currencyMenu"><button data-currency="USD">USD</button><button data-currency="CAD">CAD</button><button data-currency="EUR">EUR</button><button data-currency="GBP">GBP</button></div></div>
-<div class="select-group"><button class="select-btn" data-toggle="measureMenu">Measurement <span id="measureValue">Metric</span></button><div class="select-menu" id="measureMenu"><button data-measure="Metric">Metric</button><button data-measure="Imperial">Imperial</button></div></div>
-<div class="select-group"><button class="select-btn" data-toggle="regionMenu">Region <span id="regionValue">United States</span></button><div class="select-menu wide" id="regionMenu"><button data-region="United States">United States</button><button data-region="Canada">Canada</button><button data-region="Caribbean">Caribbean</button><button data-region="UK">UK</button><button data-region="EU">EU</button><button data-region="Middle East">Middle East</button><button data-region="Africa">Africa</button></div></div>
-</div>
-<nav class="main-nav" aria-label="Primary navigation">
-<a href="./platform.html">Platform</a><a href="./modules.html">Modules</a><a href="./surety.html">Surety &amp; Bonding</a><a href="./ai-agent.html">AI Agent</a><a href="./pricing.html">Pricing</a><a href="./use-cases.html">Use Cases</a><a href="./global-support.html">Global Support</a><a href="./resources.html">Resources</a><a href="./contact.html">Contact</a>
-</nav>
-<div class="header-cta"><button class="btn ghost" onclick="location.href='./contact.html'">Book Demo</button><button class="btn primary" onclick="location.href='./contact.html'">Start Free Pilot</button></div>
-<button class="mobile-menu-btn" data-toggle-mobile>Menu</button>
-</div>
-<div class="mobile-nav" id="mobileNav">
-<a href="./platform.html">Platform</a><a href="./modules.html">Modules</a><a href="./surety.html">Surety &amp; Bonding</a><a href="./ai-agent.html">AI Agent</a><a href="./pricing.html">Pricing</a><a href="./use-cases.html">Use Cases</a><a href="./global-support.html">Global Support</a><a href="./resources.html">Resources</a><a href="./contact.html">Contact</a>
-</div>
+<header class="topbar topbar-v1">
+  <div class="container topbar-inner topbar-inner-v1">
+    <a class="brand brand-v1" href="./index.html" aria-label="VU-QC home">
+      <img src="./assets/vuqc-logo-light.png" alt="VU-QC logo" />
+    </a>
+
+    <nav class="main-nav main-nav-v1" aria-label="Primary navigation">
+      <a href="./platform.html">Platform</a>
+      <a href="./modules.html">Modules</a>
+      <a href="./surety.html">Surety &amp; Bonding</a>
+      <a href="./ai-agent.html">AI Agent</a>
+      <a href="./pricing.html">Pricing</a>
+      <a href="./use-cases.html">Use Cases</a>
+      <a href="./global-support.html">Global Support</a>
+      <a href="./resources.html">Resources</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions-v1">
+      <div class="select-group global-group" aria-label="Global support controls">
+        <button class="select-btn select-btn-global" data-toggle="globalMenu" aria-expanded="false" aria-controls="globalMenu">
+          <span class="globe-dot"></span>
+          Global
+          <span class="global-inline-values"><b id="langValue">EN</b> · <b id="currencyValue">USD</b> · <b id="measureValue">Metric</b></span>
+        </button>
+        <div class="select-menu select-menu-global wide" id="globalMenu">
+          <div class="global-menu-section">
+            <span class="global-menu-label">Language</span>
+            <div class="global-option-row">
+              <button data-lang="EN">EN</button><button data-lang="ES">ES</button><button data-lang="FR">FR</button><button data-lang="PT">PT</button><button data-lang="AR">AR</button>
+            </div>
+          </div>
+          <div class="global-menu-section">
+            <span class="global-menu-label">Currency</span>
+            <div class="global-option-row">
+              <button data-currency="USD">USD</button><button data-currency="CAD">CAD</button><button data-currency="EUR">EUR</button><button data-currency="GBP">GBP</button>
+            </div>
+          </div>
+          <div class="global-menu-section">
+            <span class="global-menu-label">Measurement</span>
+            <div class="global-option-row">
+              <button data-measure="Metric">Metric</button><button data-measure="Imperial">Imperial</button>
+            </div>
+          </div>
+          <div class="global-menu-section">
+            <span class="global-menu-label">Region</span>
+            <div class="global-option-row global-option-row-region">
+              <button data-region="United States">United States</button><button data-region="Canada">Canada</button><button data-region="Caribbean">Caribbean</button><button data-region="UK">UK</button><button data-region="EU">EU</button><button data-region="Middle East">Middle East</button><button data-region="Africa">Africa</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-cta header-cta-v1">
+        <button class="btn ghost btn-header-ghost" onclick="location.href='./contact.html'">Book Demo</button><button class="btn primary btn-header-primary" onclick="location.href='./contact.html'">Start Free Pilot</button>
+      </div>
+
+      <button class="mobile-menu-btn mobile-menu-btn-v1" data-toggle-mobile aria-expanded="false" aria-controls="mobileNav">Menu</button>
+    </div>
+  </div>
+
+  <div class="mobile-nav mobile-nav-v1" id="mobileNav">
+    <a href="./platform.html">Platform</a>
+    <a href="./modules.html">Modules</a>
+    <a href="./surety.html">Surety &amp; Bonding</a>
+    <a href="./ai-agent.html">AI Agent</a>
+    <a href="./pricing.html">Pricing</a>
+    <a href="./use-cases.html">Use Cases</a>
+    <a href="./global-support.html">Global Support</a>
+    <a href="./resources.html">Resources</a>
+    <a href="./contact.html">Contact</a>
+    <div class="mobile-global-inline">Global: <span id="mobileRegionValue">United States</span> · <span id="mobileLangValue">EN</span> · <span id="mobileCurrencyValue">USD</span></div>
+  </div>
 </header>
 
 <main>
@@ -516,6 +571,14 @@
 </div>
 
 <script>
+const canned = {
+  'Which plan fits my team?': 'Most teams start with a Free Pilot on one real project, then move to Professional for full multi-module coverage. Enterprise is best for sureties, large EPCs, and portfolio-level visibility.',
+  'How does the free pilot work?': 'Upload one real contract or drawing package. VU-QC runs a sample analysis and shows you extracted obligations, risks, RFI candidates, and design issues from your actual project data. No credit card needed.',
+  'What are AI analysis credits?': 'Credits are consumed when VU-QC runs AI analysis — one credit for a single contract, 2–5 for drawing reviews, 3–5 for full contract packages. Credits scale with document complexity.',
+  'Does VU-QC include surety features?': 'Surety & Bonding Intelligence is an add-on for Professional ($1,500/mo) and included in Portfolio and Enterprise plans. It provides contractor health dashboards, bond exposure visibility, and early warning signals.',
+  'How much could we save?': 'Use the ROI calculator above to estimate. Most teams find that catching one $25K+ issue pays for months of platform use.'
+};
+
 /* ====== CURRENCY CONVERSION ====== */
 const currencyMap = {
   USD: { symbol: '$', rate: 1 },
@@ -556,47 +619,143 @@ function updatePricing() {
   updateROI();
 }
 
-/* Billing toggle */
-document.querySelectorAll('[data-billing]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('[data-billing]').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    currentBilling = btn.dataset.billing;
+/* ====== SHARED SITE JS ====== */
+const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+const mobileNav = document.getElementById('mobileNav');
+const mobileMenuBtn = document.querySelector('[data-toggle-mobile]');
+
+document.querySelectorAll('.main-nav a, .mobile-nav a').forEach(link => {
+  const href = (link.getAttribute('href') || '').replace('./', '');
+  const target = href.split('#')[0] || 'index.html';
+  if (target === currentPage) {
+    link.classList.add('active');
+    link.setAttribute('aria-current', 'page');
+  } else {
+    link.removeAttribute('aria-current');
+  }
+});
+
+document.querySelectorAll('.mobile-nav a').forEach(link => link.addEventListener('click', () => {
+  mobileNav?.classList.remove('open');
+  mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+}));
+
+document.querySelector('[data-toggle-mobile]')?.addEventListener('click', () => {
+  mobileNav?.classList.toggle('open');
+  const expanded = mobileNav?.classList.contains('open') ? 'true' : 'false';
+  mobileMenuBtn?.setAttribute('aria-expanded', expanded);
+});
+
+/* Dropdown menu toggle */
+const toggleMenu = (id) => document.getElementById(id)?.classList.toggle('open');
+document.querySelectorAll('[data-toggle]').forEach(btn => btn.addEventListener('click', e => {
+  e.stopPropagation();
+  toggleMenu(btn.dataset.toggle);
+}));
+document.addEventListener('click', () => document.querySelectorAll('.select-menu').forEach(m => m.classList.remove('open')));
+
+/* Global Selector Handlers */
+document.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => {
+  const v = b.dataset.lang;
+  const el = document.getElementById('langValue');
+  if (el) el.textContent = v;
+  const mobileLang = document.getElementById('mobileLangValue');
+  if (mobileLang) mobileLang.textContent = v;
+});
+
+document.querySelectorAll('[data-currency]').forEach(b => b.onclick = () => {
+  const v = b.dataset.currency;
+  const el = document.getElementById('currencyValue');
+  if (el) el.textContent = v;
+  const mobileCurrency = document.getElementById('mobileCurrencyValue');
+  if (mobileCurrency) mobileCurrency.textContent = v;
+  const currencyHero = document.getElementById('currencyHero');
+  if (currencyHero) currencyHero.textContent = `${v} 148M`;
+  const currencyBadge = document.getElementById('currencyBadge');
+  if (currencyBadge) currencyBadge.textContent = v;
+  const exposureValue = document.getElementById('exposureValue');
+  if (exposureValue) exposureValue.textContent = `${v} 148M`;
+  
+  if (typeof updatePricing === 'function') {
+    currentCurrency = v;
     updatePricing();
-  });
+  }
 });
 
-/* Currency selector */
-document.getElementById('currencySelect').addEventListener('change', e => {
-  currentCurrency = e.target.value;
-  updatePricing();
+document.querySelectorAll('[data-measure]').forEach(b => b.onclick = () => {
+  const v = b.dataset.measure;
+  const el = document.getElementById('measureValue');
+  if (el) el.textContent = v;
+  
+  if (typeof updatePricing === 'function') {
+    updatePricing();
+  }
 });
 
-/* ====== ROI CALCULATOR ====== */
-function updateROI() {
-  const volume = parseInt(document.getElementById('roiVolume').value);
-  const projects = parseInt(document.getElementById('roiProjects').value);
-  const rework = parseFloat(document.getElementById('roiRework').value);
-  const issueCost = parseInt(document.getElementById('roiIssueCost').value);
-  const prevented = parseInt(document.getElementById('roiIssuesPrevented').value);
+document.querySelectorAll('[data-region]').forEach(b => b.onclick = () => {
+  const v = b.dataset.region;
+  const el = document.getElementById('regionValue');
+  if (el) el.textContent = v;
+  const regionLabel = document.getElementById('regionLabel');
+  if (regionLabel) regionLabel.textContent = v;
+  const heroRegionLabel = document.getElementById('heroRegionLabel');
+  if (heroRegionLabel) heroRegionLabel.textContent = v;
+  const footerRegion = document.getElementById('footerRegionValue');
+  if (footerRegion) footerRegion.textContent = v;
+  const mobileRegion = document.getElementById('mobileRegionValue');
+  if (mobileRegion) mobileRegion.textContent = v;
+  
+  if (typeof updatePricing === 'function') {
+    updatePricing();
+  }
+});
 
-  document.getElementById('roiVolumeLabel').textContent = formatMoney(volume, currentCurrency);
-  document.getElementById('roiProjectsLabel').textContent = projects;
-  document.getElementById('roiReworkLabel').textContent = rework + '%';
-  document.getElementById('roiIssueCostLabel').textContent = formatMoney(issueCost, currentCurrency);
-  document.getElementById('roiIssuesPreventedLabel').textContent = prevented;
+document.querySelectorAll('[data-footer-region]').forEach(b => b.onclick = () => {
+  const v = b.dataset.footerRegion;
+  const footerRegion = document.getElementById('footerRegionValue');
+  if (footerRegion) footerRegion.textContent = v;
+  const regionValue = document.getElementById('regionValue');
+  if (regionValue) regionValue.textContent = v;
+  const mobileRegion = document.getElementById('mobileRegionValue');
+  if (mobileRegion) mobileRegion.textContent = v;
+  
+  if (typeof updatePricing === 'function') {
+    updatePricing();
+  }
+});
 
-  const savings = issueCost * prevented * projects;
-  const proAnnual = 24990;
-  const paybackRatio = proAnnual > 0 ? (savings / proAnnual) : 0;
+/* Modals */
+const openModal = (id) => document.getElementById(id)?.classList.add('open');
+const closeModals = () => document.querySelectorAll('.modal').forEach(m => m.classList.remove('open'));
+document.querySelectorAll('[data-open-demo]').forEach(b => b.onclick = () => openModal(b.dataset.openDemo));
+document.querySelector('[data-open-preview]')?.addEventListener('click', () => openModal('previewModal'));
+document.querySelectorAll('[data-close-modal]').forEach(b => b.onclick = closeModals);
+document.querySelectorAll('.modal').forEach(m => m.addEventListener('click', e => {
+  if (e.target === m) closeModals();
+}));
 
-  document.getElementById('roiSavingsValue').textContent = formatMoney(savings, currentCurrency);
-  document.getElementById('roiPayback').textContent = '~' + paybackRatio.toFixed(1) + '× compared to Professional annual plan';
+/* Assistant Drawer */
+const drawer = document.getElementById('assistantDrawer');
+const log = document.getElementById('assistantLog');
+const assistantTrigger = document.getElementById('assistantTrigger');
+if (assistantTrigger) {
+  assistantTrigger.onclick = () => drawer?.classList.toggle('open');
 }
-
-document.querySelectorAll('#roiCalculator input[type="range"]').forEach(input => {
-  input.addEventListener('input', updateROI);
+const assistantClose = document.getElementById('assistantClose');
+if (assistantClose) {
+  assistantClose.onclick = () => drawer?.classList.remove('open');
+}
+document.querySelectorAll('.assistant-prompt').forEach(btn => btn.onclick = () => {
+  const q = btn.textContent.trim();
+  if (typeof canned !== 'undefined' && canned[q]) {
+    log?.insertAdjacentHTML('beforeend', `<div class="chat-msg user">${q}</div><div class="chat-msg ai">${canned[q]}</div>`);
+  } else {
+    log?.insertAdjacentHTML('beforeend', `<div class="chat-msg user">${q}</div><div class="chat-msg ai">Please contact us for more details.</div>`);
+  }
+  if (log) log.scrollTop = log.scrollHeight;
 });
+
+
 
 /* ====== FAQ ACCORDION ====== */
 document.querySelectorAll('.faq-question').forEach(btn => {
@@ -606,50 +765,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
     document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
     if (!isOpen) item.classList.add('open');
   });
-});
-
-/* ====== SHARED SITE JS ====== */
-const canned = {
-  'Which plan fits my team?': 'Most teams start with a Free Pilot on one real project, then move to Professional for full multi-module coverage. Enterprise is best for sureties, large EPCs, and portfolio-level visibility.',
-  'How does the free pilot work?': 'Upload one real contract or drawing package. VU-QC runs a sample analysis and shows you extracted obligations, risks, RFI candidates, and design issues from your actual project data. No credit card needed.',
-  'What are AI analysis credits?': 'Credits are consumed when VU-QC runs AI analysis — one credit for a single contract, 2–5 for drawing reviews, 3–5 for full contract packages. Credits scale with document complexity.',
-  'Does VU-QC include surety features?': 'Surety & Bonding Intelligence is an add-on for Professional ($1,500/mo) and included in Portfolio and Enterprise plans. It provides contractor health dashboards, bond exposure visibility, and early warning signals.',
-  'How much could we save?': 'Use the ROI calculator above to estimate. Most teams find that catching one $25K+ issue pays for months of platform use.'
-};
-
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-document.querySelectorAll('.main-nav a, .mobile-nav a').forEach(link => {
-  const href = (link.getAttribute('href') || '').replace('./', '');
-  const target = href.split('#')[0] || 'index.html';
-  if (target === currentPage) link.classList.add('active');
-});
-
-document.querySelectorAll('.mobile-nav a').forEach(link => link.addEventListener('click', () => {
-  document.getElementById('mobileNav')?.classList.remove('open');
-}));
-
-const toggleMenu = (id) => document.getElementById(id)?.classList.toggle('open');
-document.querySelectorAll('[data-toggle]').forEach(btn => btn.addEventListener('click', e => { e.stopPropagation(); toggleMenu(btn.dataset.toggle); }));
-document.addEventListener('click', () => document.querySelectorAll('.select-menu').forEach(m => m.classList.remove('open')));
-
-document.querySelectorAll('[data-lang]').forEach(b => b.onclick = () => document.getElementById('langValue').textContent = b.dataset.lang);
-document.querySelectorAll('[data-currency]').forEach(b => b.onclick = () => { document.getElementById('currencyValue').textContent = b.dataset.currency; });
-document.querySelectorAll('[data-measure]').forEach(b => b.onclick = () => document.getElementById('measureValue').textContent = b.dataset.measure);
-document.querySelectorAll('[data-region]').forEach(b => b.onclick = () => {
-  document.getElementById('regionValue').textContent = b.dataset.region;
-  document.getElementById('footerRegionValue').textContent = b.dataset.region;
-});
-document.querySelectorAll('[data-footer-region]').forEach(b => b.onclick = () => document.getElementById('footerRegionValue').textContent = b.dataset.footerRegion);
-document.querySelector('[data-toggle-mobile]')?.addEventListener('click', () => document.getElementById('mobileNav').classList.toggle('open'));
-
-const drawer = document.getElementById('assistantDrawer');
-const log = document.getElementById('assistantLog');
-document.getElementById('assistantTrigger').onclick = () => drawer.classList.toggle('open');
-document.getElementById('assistantClose').onclick = () => drawer.classList.remove('open');
-document.querySelectorAll('.assistant-prompt').forEach(btn => btn.onclick = () => {
-  const q = btn.textContent.trim();
-  log.insertAdjacentHTML('beforeend', `<div class="chat-msg user">${q}</div><div class="chat-msg ai">${canned[q] || 'Please contact us for more details.'}</div>`);
-  log.scrollTop = log.scrollHeight;
 });
 
 /* Init pricing on load */
