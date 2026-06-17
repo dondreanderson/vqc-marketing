@@ -11,8 +11,8 @@
   gap: 28px;
 }
 .topbar-v1 .brand img { width: 148px; }
-.topbar-v1 .main-nav { display: flex; gap: 6px; }
-.topbar-v1 .main-nav a { color: rgba(226,232,240,0.78); font-size: 13.5px; }
+.topbar-v1 .main-nav { display: flex; gap: 4px; }
+.topbar-v1 .main-nav a { color: rgba(226,232,240,0.78); font-size: 13px; }
 .topbar-v1 .main-nav a:hover { color: #fff; }
 .topbar-v1 .main-nav a.active,
 .topbar-v1 .main-nav a[aria-current="page"] { color: #fff; font-weight: 600; text-shadow: none; }
@@ -74,11 +74,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
   flex-wrap: nowrap;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   min-width: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+.main-nav-v1::-webkit-scrollbar { display: none; }
 
 .main-nav-v1 a {
   position: relative;
@@ -86,14 +90,15 @@
   align-items: center;
   justify-content: center;
   min-height: 40px;
-  padding: 10px 12px;
+  padding: 8px 10px;
   border-radius: 999px;
   color: rgba(226,232,240,0.78);
-  font-size: 13.5px;
+  font-size: 13px;
   font-weight: 500;
   letter-spacing: 0.01em;
   transition: color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .main-nav-v1 a:hover {
