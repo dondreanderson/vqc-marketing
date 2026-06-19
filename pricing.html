@@ -101,7 +101,46 @@
     </div>
   </div>
 
-  <div class="mobile-nav mobile-nav-v1" id="mobileNav">
+  
+  <!-- Two-Column Mega Menu -->
+  <div class="mega-menu" id="megaMenu" aria-hidden="true">
+    <div class="mega-close-row"><button class="mega-close-btn" id="megaCloseBtn" aria-label="Close menu">&times;</button></div>
+    <div class="container mega-menu-inner">
+      <div class="mega-col">
+        <span class="mega-label">Product</span>
+        <a href="./platform.html" class="mega-link"><strong>Platform</strong><span>Core platform overview</span></a>
+        <a href="./modules.html" class="mega-link"><strong>Modules</strong><span>Explore all modules</span></a>
+        <a href="./ai-agent.html" class="mega-link"><strong>AI Agent</strong><span>Intelligent automation</span></a>
+        <a href="./pricing.html" class="mega-link"><strong>Pricing</strong><span>Plans, transparent pricing</span></a>
+      </div>
+      <div class="mega-col">
+        <span class="mega-label">Solutions</span>
+        <a href="./surety.html" class="mega-link"><strong>Surety &amp; Bonding</strong><span>Bond management solutions</span></a>
+        <a href="./use-cases.html" class="mega-link"><strong>Use Cases</strong><span>Real-world applications</span></a>
+        <a href="./global-support.html" class="mega-link"><strong>Global Support</strong><span>24/7 worldwide support</span></a>
+        <a href="./resources.html" class="mega-link"><strong>Resources</strong><span>Guides, docs &amp; insights</span></a>
+      </div>
+      <div class="mega-col">
+        <span class="mega-label">Company</span>
+        <a href="./contact.html" class="mega-link"><strong>About VU-QC</strong><span>Our mission &amp; team</span></a>
+        <a href="./contact.html" class="mega-link"><strong>Contact</strong><span>Get in touch</span></a>
+        <a href="./contact.html" class="mega-link"><strong>Careers</strong><span>Join our team</span></a>
+      </div>
+      <div class="mega-cta-card">
+        <div class="mega-cta-icon">&#128269;</div>
+        <strong>Ready to elevate quality control?</strong>
+        <p>Book a demo or start a free pilot today.</p>
+        <div class="mega-cta-actions">
+          <button class="btn ghost btn-header-ghost" data-open-demo="demoModal">Book Demo</button>
+          <button class="btn primary btn-header-primary" data-open-demo="demoModal">Start Free Pilot</button>
+        </div>
+        <a href="./security.html" style="margin-top:8px;font-size:12px;color:rgba(148,163,184,0.8)">Security<span style="margin-left:6px;color:rgba(148,163,184,0.5)">Trust &amp; compliance</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="mega-overlay" id="megaOverlay"></div>
+
+  <div class="mobile-nav mobile-nav-v1 mega-replaced" id="mobileNav">
     <a href="./platform.html">Platform</a>
     <a href="./modules.html">Modules</a>
     <a href="./surety.html">Surety &amp; Bonding</a>
@@ -666,11 +705,45 @@ document.querySelectorAll('.mobile-nav a').forEach(link => link.addEventListener
   mobileMenuBtn?.setAttribute('aria-expanded', 'false');
 }));
 
-document.querySelector('[data-toggle-mobile]')?.addEventListener('click', () => {
-  mobileNav?.classList.toggle('open');
-  const expanded = mobileNav?.classList.contains('open') ? 'true' : 'false';
-  mobileMenuBtn?.setAttribute('aria-expanded', expanded);
+document.querySelector('[data-toggle-mobile]')?.addEventListener('click', toggleMegaMenu);
+
+/* Mega Menu Toggle */
+const megaMenu = document.getElementById('megaMenu');
+const megaOverlay = document.getElementById('megaOverlay');
+const megaCloseBtn = document.getElementById('megaCloseBtn');
+
+function openMegaMenu() {
+  megaMenu?.classList.add('open');
+  megaOverlay?.classList.add('open');
+  megaMenu?.setAttribute('aria-hidden', 'false');
+  mobileMenuBtn?.setAttribute('aria-expanded', 'true');
+  mobileMenuBtn.textContent = 'Close';
+}
+function closeMegaMenu() {
+  megaMenu?.classList.remove('open');
+  megaOverlay?.classList.remove('open');
+  megaMenu?.setAttribute('aria-hidden', 'true');
+  mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+  mobileMenuBtn.textContent = 'Menu';
+}
+function toggleMegaMenu() {
+  if (megaMenu?.classList.contains('open')) { closeMegaMenu(); } else { openMegaMenu(); }
+}
+
+megaCloseBtn?.addEventListener('click', closeMegaMenu);
+megaOverlay?.addEventListener('click', closeMegaMenu);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMegaMenu(); });
+
+/* Highlight active page in mega menu */
+document.querySelectorAll('.mega-link').forEach(link => {
+  const href = (link.getAttribute('href') || '').replace('./', '');
+  const target = href.split('#')[0] || 'index.html';
+  if (target === currentPage) {
+    link.classList.add('active');
+    link.setAttribute('aria-current', 'page');
+  }
 });
+
 
 /* Dropdown menu toggle */
 const toggleMenu = (id) => document.getElementById(id)?.classList.toggle('open');
@@ -751,7 +824,7 @@ document.querySelectorAll('[data-footer-region]').forEach(b => b.onclick = () =>
 });
 
 /* Modals */
-const openModal = (id) => document.getElementById(id)?.classList.add('open');
+const openModal = (id) => { closeMegaMenu(); document.getElementById(id)?.classList.add('open'); };
 const closeModals = () => document.querySelectorAll('.modal').forEach(m => m.classList.remove('open'));
 document.querySelectorAll('[data-open-demo]').forEach(b => b.onclick = () => openModal(b.dataset.openDemo));
 document.querySelector('[data-open-preview]')?.addEventListener('click', () => openModal('previewModal'));
