@@ -21,7 +21,7 @@
 .topbar-v1 .header-cta { display: flex; }
 .topbar-v1 .mobile-menu-btn { display: none; }
 .topbar-v1 .mobile-nav { display: none; }
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   .topbar-v1 .topbar-inner { grid-template-columns: 148px 1fr auto; }
   .topbar-v1 .main-nav { display: none; }
   .topbar-v1 .mobile-menu-btn { display: inline-flex; }
@@ -72,11 +72,7 @@
   justify-content: center;
   gap: 4px;
   flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow-y: hidden;
   min-width: 0;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
 }
 .main-nav-v1::-webkit-scrollbar { display: none; }
 
@@ -262,7 +258,7 @@
   margin-top: 6px;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1600px) {
   .topbar-inner-v1 {
     grid-template-columns: 148px 1fr auto;
     gap: 12px;
