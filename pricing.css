@@ -753,6 +753,12 @@
   margin-top: 24px;
 }
 
+.compare-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 24px;
+}
+
 .compare-table {
   border: 1px solid var(--line);
   border-radius: 18px;
@@ -764,13 +770,25 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 13px;
-  min-width: 900px;
+  min-width: 1100px;
+  table-layout: fixed;
+}
+
+/* First column (feature name) gets more space; plan columns share equally */
+.compare-table th:first-child,
+.compare-table td:first-child {
+  width: 180px;
+}
+
+.compare-table th:not(:first-child),
+.compare-table td:not(:first-child) {
+  text-align: center;
 }
 
 .compare-table th {
   background: #f8fafc;
   padding: 14px 16px;
-  text-align: left;
+  text-align: center;
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -786,6 +804,7 @@
   left: 0;
   z-index: 2;
   background: #fff;
+  text-align: left;
 }
 
 .compare-table th:first-child {
@@ -865,6 +884,18 @@
   font-weight: 500;
   color: var(--muted);
   background: rgba(148,163,184,0.08);
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.val-custom {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #7c3aed;
+  background: rgba(124,58,237,0.08);
   padding: 3px 8px;
   border-radius: 999px;
 }
